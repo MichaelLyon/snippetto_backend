@@ -36,11 +36,12 @@ var request = require('request');
       res.send(JSON.parse(body));
     })
   })
-  // router.get('/getNumber', function(req,res,next){
-  //   request('http://numbersapi.com/'+(Math.ceil(Math.random()*1000))+'/math', function(error,response,body){
-  //     res.send(JSON.parse(body));
-  //   })
-  // })
+  
+  router.get('/getNumber', function(req,res,next){
+    request('http://numbersapi.com/'+(Math.ceil(Math.random()*1000))+'/math', function(error,response,body){
+      res.send(JSON.parse(body));
+    })
+  })
 
   router.get('/getTrivia', function(req,res,next){
     request("http://jservice.io/api/random", function(error,response,body){
