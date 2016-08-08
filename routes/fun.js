@@ -36,9 +36,10 @@ var request = require('request');
       res.send(JSON.parse(body));
     })
   })
-  
+
   router.get('/getNumber', function(req,res,next){
-    request('http://numbersapi.com/'+(Math.ceil(Math.random()*1000))+'/math', function(error,response,body){
+    var number = (Math.ceil(Math.random()*1000));
+    request('http://numbersapi.com/'+number+'/math', function(error,response,body){
       res.send(JSON.parse(body));
     })
   })
