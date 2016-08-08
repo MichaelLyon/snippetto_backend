@@ -31,4 +31,12 @@ var request = require('request');
     })
   })
 
+  router.get('/getMeme', function(req,res,next){
+    request("http://api.automeme.net/", function(error,response,body){
+      res.send(JSON.parse(body));
+    })
+  })
+
+  // router.get('/')
+
   module.exports = router;
