@@ -38,9 +38,9 @@ var request = require('request');
   })
 
   router.get('/getNumber', function(req,res,next){
-    var number = (Math.ceil(Math.random()*1000));
-    request('http://numbersapi.com/'+number+'/math', function(error,response,body){
-      res.send(JSON.parse(body));
+    var number = Math.floor(Math.random()*1000);
+    request("http://numbersapi.com/"+number+"/math", function(error,response,body){
+      res.send(body);
     })
   })
 
