@@ -32,11 +32,9 @@ var request = require('request');
   })
 
   router.get('/getMeme', function(req,res,next){
-    request("http://api.automeme.net/", function(error,response,body){
+    request("http://catfacts-api.appspot.com/api/facts?number=1", function(error,response,body){
       res.send(JSON.parse(body));
     })
   })
-
-  // router.get('/')
 
   module.exports = router;
